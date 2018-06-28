@@ -35,6 +35,27 @@ const Blockchain = require('./Blockchain');
 // console.log(catcoin);
 
 // !!
+// const catcoin = new Blockchain();
+
+// const previousBlockHash = 'IJFLASJIFOAESKOKEPSKDPOE';
+// const currentBlockData =[{
+//     amount: 2323,
+//     sender: 'ALEXVPOOKSPEOKFOEPKF',
+//     recipient: 'JOIKCKOPEWSSEIPRI'
+// },{
+//     amount: 23245,
+//     sender: 'ALEXVPOOKSPEOKFOEPKF',
+//     recipient: 'JOIKCKOPEWSSEIPRI'
+// },{
+//     amount: 123,
+//     sender: 'ALEXVPOOKSPEOKFOEPKF',
+//     recipient: 'JOIKCKOPEWSSFEIPRI'
+// }]
+
+// const nonce = 23903294
+// console.log(catcoin.hashBlock(previousBlockHash,currentBlockData, nonce));
+
+// !!
 const catcoin = new Blockchain();
 
 const previousBlockHash = 'IJFLASJIFOAESKOKEPSKDPOE';
@@ -51,6 +72,8 @@ const currentBlockData =[{
     sender: 'ALEXVPOOKSPEOKFOEPKF',
     recipient: 'JOIKCKOPEWSSFEIPRI'
 }]
-
-const nonce = 23903294
-console.log(catcoin.hashBlock(previousBlockHash,currentBlockData, nonce));
+// caculate
+console.log(catcoin.proofOfWork(previousBlockHash,currentBlockData));
+// verify
+console.log(catcoin.hashBlock(previousBlockHash,currentBlockData, 16015));
+// it took lots time to mine but easy to verify.
