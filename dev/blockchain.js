@@ -1,7 +1,7 @@
 // blockchain data structure
 function Blockchain(){
     this.chain = [];
-    this.newTransations = [];
+    this.pendingTransations = [];
 }
 
 Blockchain.prototype.createNewBlock = function(nonce, previousBlockHash, hash){
@@ -10,11 +10,11 @@ Blockchain.prototype.createNewBlock = function(nonce, previousBlockHash, hash){
         timestamp: Date.now(),
         nonce: nonce,
         hash: hash,
-        transations: this.newTransations,
+        transations: this.pendingTransations,
         previousBlockHash: previousBlockHash
     }
 
-    this.newTransations = [];
+    this.pendingTransations = [];
     this.chain.push(newBlock);
 
     return newBlock;
@@ -23,5 +23,15 @@ Blockchain.prototype.createNewBlock = function(nonce, previousBlockHash, hash){
 
 Blockchain.prototype.getLastBlock = function(){
     return this.chain[this.chain.length - 1];
+}
+
+Blockchain.prototype.createNewTransation = function(amount, sender, recipient){
+    const newTransation = {
+        amount: amount,
+        sender: sender,
+        recipient: recipient
+    }
+    this.pendingTransations.push(newTransation);
+    return this.getLastBlock()['index'] + 1;
 }
 module.exports = Blockchain;
