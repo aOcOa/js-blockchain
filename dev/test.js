@@ -7,4 +7,4 @@ catcoin.createNewBlock(5646, 'rgdfgdfgrg','xcvxcvdfgtyrty');
 catcoin.createNewBlock(234234, 'sadasuyjymyum','dscsdefff');
 catcoin.createNewBlock(8, 'uuujujgnfgbfgb','wetryrtyrty');
 
-console.log(cacoin);
+console.log(catcoin);

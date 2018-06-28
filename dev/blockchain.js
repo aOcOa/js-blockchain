@@ -6,7 +6,7 @@ function Blockchain(){
 
 Blockchain.prototype.createNewBlock = function(nonce, previousBlockHash, hash){
     const newBlock = {
-        index: this.chain.length,
+        index: this.chain.length + 1,
         timestamp: Date.now(),
         nonce: nonce,
         hash: hash,
